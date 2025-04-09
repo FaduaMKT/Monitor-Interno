@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor de Empresas</title>
+  <style>
+        body {
+      background: linear-gradient(155deg, #ED1B34 0%, black 100%);
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tab-buttons {
+      margin-top: 20px;
+    }
+
+    .tab-buttons button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      margin: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .tab-buttons button:hover,
+    .tab-buttons button.active {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .tab-section {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .tab-content {
+      display: none;
+      max-width: 80%;
+      height: 85vh;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-spacing: 0;
+    }
+
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    td {
+      width: 30%;
+      min-width: 300px;
+      max-width: 300px;
+      height: 600px;
+      margin: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 1024px) {
+      td {
+        width: 45%;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      td {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      iframe {
+        height: 400px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="tab-buttons">
+    <button onclick="showTab('faduasa')" class="active">Faduasa</button>
+    <button onclick="showTab('lox')">Lox</button>
+    <button onclick="showTab('ranisa')">Ranisa</button>
+  </div>
+
+  <div class="tab-section">
+    <div id="faduasa" class="tab-content active">
+      <table>
+        <tr>
+          <td><p>faduasa.com</p><iframe src="https://faduasa.com"></iframe></td>
+          <td><p>apps.fiatfadua.com</p><iframe src="https://apps.fiatfadua.com"></iframe></td>
+          <td><p>rrss.faduasa.com</p><iframe src="https://rrss.faduasa.com"></iframe></td>
+          <td><p>postventa.faduasa.com</p><iframe src="https://postventa.faduasa.com"></iframe></td>
+          <td><p>ventas.faduasa.com</p><iframe src="https://ventas.faduasa.com"></iframe></td>
+          <td><p>rrhh.faduasa.com/vacantes</p><iframe src="https://rrhh.faduasa.com/vacantes"></iframe></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="lox" class="tab-content">
+      <table>
+        <tr>
+          <td><p>loxautos.com.ar</p><iframe src="https://loxautos.com.ar"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="ranisa" class="tab-content">
+      <table>
+        <tr>
+          <td><p>ventas.ranisa.com.ar</p><iframe src="https://ventas.ranisa.com.ar"></iframe></td>
+          <td><p>raniagro.com.ar</p><iframe src="https://raniagro.com.ar"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+          <td><p>#####--Agregar-sitio--#####</p><iframe src="https://www.example.com"></iframe></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-buttons button');
+
+      contents.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
