@@ -89,6 +89,15 @@ p {
   font-weight: bold;
 }
 
+td p:nth-of-type(2),
+td p:nth-of-type(3) {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+
 @media (max-width: 1024px) {
   iframe {
     width: 100%;
